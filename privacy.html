@@ -11,10 +11,10 @@ a{color:var(--accent)} li{margin:.3em 0} .muted{color:var(--muted)}
 </style></head><body><main>
 <p><a href="index.html">← Skit Video Uploader</a> · <a href="#tr">Türkçe</a></p>
 <h1>Privacy Policy</h1>
-<p class="muted">Last updated: October 31, 2026</p>
+<p class="muted">Last updated: November 2, 2026</p>
 
 <h2>Who we are</h2>
-<p>Skit Video Uploader is a private tool operated by the creator of the YouTube channels Prompt Panik and
+<p>Skit Video Uploader is a private tool operated by the creator of the YouTube, Instagram and TikTok accounts Prompt Panik and
 Vibe &amp; Bug. Contact: promptpanik@gmail.com.</p>
 
 <h2>YouTube API Services</h2>
@@ -40,12 +40,26 @@ their titles, descriptions and tags.</li>
 including the Limited Use requirements.</li>
 </ul>
 
+<h2>Instagram and TikTok</h2>
+<ul>
+<li>The tool also publishes the same videos to the creator's own Instagram professional accounts (@promptpanik,
+@vibeandbug) through the Instagram Graph API, and to the creator's own TikTok accounts through the TikTok Login Kit
+and Content Posting API.</li>
+<li>Instagram permissions: <code>instagram_basic</code>, <code>instagram_content_publish</code>,
+<code>pages_show_list</code>, <code>pages_read_engagement</code>, <code>business_management</code>. TikTok scopes:
+<code>user.info.basic</code> (to confirm the connected account) and <code>video.upload</code> /
+<code>video.publish</code> (to post the creator's videos).</li>
+<li>No data about other users, followers or viewers is read or stored. Access tokens are kept only on the creator's
+private server. Access can be removed from Facebook/Instagram settings (Apps and websites) or TikTok settings
+(Security → Manage app permissions).</li>
+</ul>
+
 <h2>Revoking access and deletion</h2>
 <p>Access can be revoked at any time from <a href="https://myaccount.google.com/permissions">Google Account → Third-party
 access</a>. Stored tokens are deleted when access is revoked or on request to the contact address above.</p>
 
 <h2 id="tr">Gizlilik Politikası (Türkçe)</h2>
-<p>Skit Video Uploader, Prompt Panik ve Vibe &amp; Bug YouTube kanallarının sahibinin kullandığı özel bir araçtır.
+<p>Skit Video Uploader, Prompt Panik ve Vibe &amp; Bug YouTube, Instagram ve TikTok hesaplarının sahibinin kullandığı özel bir araçtır.
 İletişim: promptpanik@gmail.com.</p>
 <ul>
 <li>Araç YouTube API Hizmetlerini kullanır; <a href="https://www.youtube.com/t/terms">YouTube Hizmet Şartları</a> ve
@@ -57,5 +71,8 @@ analiz için kullanılmaz. Google API'lerinden alınan bilgilerin kullanımı Go
 (Limited Use dahil) uygundur.</li>
 <li>Erişim <a href="https://myaccount.google.com/permissions">Google Hesabı → Üçüncü taraf erişimi</a> sayfasından
 istenildiği zaman kaldırılabilir; saklanan anahtarlar bu durumda ya da talep üzerine silinir.</li>
+<li>Aynı videolar kanal sahibinin kendi Instagram (@promptpanik, @vibeandbug) ve TikTok hesaplarına da resmi API'lerle
+paylaşılır. Yalnızca paylaşım ve hesap adını doğrulama izinleri istenir; erişim Facebook/Instagram ve TikTok ayarlarından
+kaldırılabilir.</li>
 </ul>
 </main></body></html>

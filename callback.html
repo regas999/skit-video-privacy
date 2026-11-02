@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer"><meta name="robots" content="noindex">
+<title>Skit Video Uploader – Sign-in complete</title>
+<style>
+:root{color-scheme:light dark;--fg:#1a1a1a;--bg:#fff;--accent:#c4673f;--muted:#555;--box:#f4efe9}
+@media (prefers-color-scheme:dark){:root{--fg:#e8e8e8;--bg:#121212;--accent:#f0a07a;--muted:#aaa;--box:#1f1b18}}
+body{font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--fg);background:var(--bg);margin:0}
+main{max-width:640px;margin:0 auto;padding:32px 16px}
+h1{color:var(--accent);font-size:1.5em} .muted{color:var(--muted)}
+button{font:inherit;padding:10px 18px;border:0;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer}
+#code{position:absolute;left:-9999px}
+</style></head><body><main>
+<h1 id="title">Skit Video Uploader</h1>
+<p id="msg" class="muted">This page finishes the sign-in for the channel owner's own upload tool.</p>
+<p id="actions" hidden><button id="copy">Kodu kopyala / Copy code</button></p>
+<textarea id="code" readonly></textarea>
+<script>
+// Kod ekrana yazılmaz; sadece panoya kopyalanır ve adres çubuğundan silinir.
+const q = new URLSearchParams(location.search);
+const code = q.get("code"), err = q.get("error_description") || q.get("error");
+history.replaceState(null, "", location.pathname);
+const msg = document.getElementById("msg");
+if (code) {
+  document.getElementById("code").value = code;
+  msg.textContent = "Giriş tamamlandı. Kodu kopyalayıp PowerShell penceresine yapıştır. / Sign-in complete: copy the code into the setup window.";
+  document.getElementById("actions").hidden = false;
+  document.getElementById("copy").onclick = async () => {
+    try { await navigator.clipboard.writeText(code); }
+    catch { const t = document.getElementById("code"); t.select(); document.execCommand("copy"); }
+    msg.textContent = "Kopyalandı ✓ Şimdi pencereye yapıştır. / Copied.";
+  };
+} else if (err) {
+  msg.textContent = "Hata / Error: " + err;
+}
+</script>
+</main></body></html>
